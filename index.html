@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Foodpack - Nowoczesny catering dietetyczny i dieta pudełkowa. Świeże posiłki, zbilansowane makro i codzienna dostawa pod Twoje drzwi.">
+    <title>Foodpack - Nowoczesny Catering Dietetyczny</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 1. Pasek informacyjny górny -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">
+                <div class="top-bar-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Dostawa codziennie rano: 02:00 – 06:30</span>
+                </div>
+                <div class="top-bar-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>Infolinia: +48 790 000 123</span>
+                </div>
+            </div>
+            <div class="top-bar-promo">
+                Kod rabatowy: <strong>START15</strong> (-15% na zamówienie)
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Główny Header (Przycisk MENU w lewym rogu, Logo, Ustawienia i Koszyk w prawym rogu) -->
+    <header class="header">
+        <div class="container header-container">
+            <button class="menu-trigger-btn" id="drawer-toggle-btn" aria-label="Otwórz menu nawigacji">
+                <div class="menu-trigger-icon"><span></span><span></span><span></span></div>
+                <span>MENU</span>
+            </button>
+
+            <a href="index.html" class="logo" aria-label="Strona główna Foodpack">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                </div>
+                <span>Food</span>pack
+            </a>
+
+            <!-- PRAWY RÓG: Status Zalogowano + Zębatka Ustawień + Koszyk -->
+            <div class="header-actions">
+                <!-- Wskaźnik statusu logowania -->
+                <div class="auth-status-pill logged-in" id="auth-status-pill" title="Status konta">
+                    <span class="auth-status-dot"></span>
+                    <span class="auth-status-label" id="auth-status-label">Zalogowano</span>
+                </div>
+
+                <!-- Zębatka ustawień -->
+                <button class="settings-trigger-btn" aria-label="Otwórz ustawienia i profil" title="Ustawienia serwisu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                </button>
+
+                <!-- Przycisk Koszyka -->
+                <button class="cart-trigger-btn" aria-label="Otwórz koszyk zakupowy">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span>Koszyk:</span>
+                    <span class="cart-badge" id="header-cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Rozwijane Menu Boczne (Drawer) -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <aside class="side-drawer" id="side-drawer" aria-label="Główne Menu">
+        <div class="drawer-header">
+            <a href="index.html" class="logo" style="font-size:1.35rem;">
+                <div class="logo-icon" style="width:34px; height:34px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                </div>
+                <span>Food</span>pack
+            </a>
+            <button class="drawer-close-btn" id="drawer-close-btn">&times;</button>
+        </div>
+
+        <nav class="drawer-nav">
+            <span class="drawer-section-label">Podstrony</span>
+            <a href="index.html" class="drawer-link active">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></div>
+                <span>Strona Główna</span>
+            </a>
+            <a href="diety.html" class="drawer-link">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg></div>
+                <span>Diety i Pakiety</span>
+            </a>
+            <a href="kalkulator.html" class="drawer-link">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line></svg></div>
+                <span>Kalkulator Kalorii & BMI</span>
+            </a>
+            <span class="drawer-section-label">O Firmie i Pomoc</span>
+            <a href="o-nas.html" class="drawer-link">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path></svg></div>
+                <span>O nas, Atuty & Opinie</span>
+            </a>
+            <a href="faq.html" class="drawer-link">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+                <span>Częste Pytania (FAQ) & Kontakt</span>
+            </a>
+        </nav>
+
+        <div class="drawer-footer">
+            <div class="drawer-promo-card">
+                <span>Twój kupon rabatowy:</span>
+                <strong>START15 (-15%)</strong>
+            </div>
+            <a href="diety.html" class="btn btn-primary btn-sm" style="width:100%;">Przejdź do oferty diet</a>
+        </div>
+    </aside>
+
+    <!-- 4. ROZSUWANY KOSZYK (Cart Drawer) -->
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Koszyk zamówienia">
+        <div class="cart-header">
+            <h3>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Twój Koszyk
+            </h3>
+            <button class="cart-close-btn" id="cart-close-btn">&times;</button>
+        </div>
+
+        <div class="cart-body">
+            <div class="cart-empty-state" id="cart-empty-view">
+                <div class="cart-empty-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </div>
+                <h4>Twój koszyk jest pusty</h4>
+                <p>Wybierz jeden z naszych zbilansowanych pakietów dietetycznych i rozpocznij zdrowy styl życia!</p>
+                <a href="diety.html" class="btn btn-primary btn-sm">Przeglądaj diety</a>
+            </div>
+
+            <div id="cart-filled-view" style="display:none; flex-direction:column; gap:1.15rem;">
+                <!-- Stepper postępu -->
+                <div class="checkout-stepper">
+                    <div class="checkout-step active" id="step-tab-1"><span class="checkout-step-num">1</span> Koszyk</div>
+                    <span class="checkout-stepper-sep">→</span>
+                    <div class="checkout-step" id="step-tab-2"><span class="checkout-step-num">2</span> Dostawa</div>
+                    <span class="checkout-stepper-sep">→</span>
+                    <div class="checkout-step" id="step-tab-3"><span class="checkout-step-num">3</span> Płatność</div>
+                </div>
+
+                <!-- KROK 1: Wybrane pakiety i kody rabatowe -->
+                <div class="checkout-step-pane active" id="cart-step-1">
+                    <div class="diet-bundle-banner">
+                        <span class="diet-bundle-icon">⚡</span>
+                        <div><strong>Promocja Tygodnia:</strong> Zamów na 7 dni (cały tydzień) i płać <strong>10% taniej</strong> za każdy dzień!</div>
+                    </div>
+
+                    <div class="cart-items-list" id="cart-items-container"></div>
+
+                    <div class="cart-promo-section">
+                        <span class="cart-promo-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            </svg>
+                            Kupon rabatowy:
+                        </span>
+                        <form class="cart-promo-form" id="cart-promo-form">
+                            <input type="text" class="cart-promo-input" id="cart-promo-input" placeholder="Wpisz START15 lub TYDZIEN10">
+                            <button type="submit" class="btn btn-outline btn-sm">Dodaj</button>
+                        </form>
+                        <div id="cart-promo-status" class="cart-promo-status"></div>
+                    </div>
+
+                    <div class="cart-footer" style="padding:1rem 0 0; background:transparent; border-top:1px solid var(--border-color);">
+                        <div class="cart-summary-row"><span>Wartość posiłków:</span><strong id="cart-subtotal">0 zł</strong></div>
+                        <div class="cart-summary-row discount-row" id="cart-discount-row" style="display:none;"><span>Rabat aktywny:</span><strong id="cart-discount-val">-0 zł</strong></div>
+                        <div class="cart-summary-row"><span>Dostawa chłodnicza:</span><strong style="color:var(--primary);">Gratis (0 zł)</strong></div>
+                        <div class="cart-summary-total"><span>Razem do zapłaty:</span><span id="cart-total">0 zł</span></div>
+                        <button class="btn btn-primary cart-checkout-btn" id="btn-to-step-2">Dalej: Dane dostawy & Adres →</button>
+                    </div>
+                </div>
+
+                <!-- KROK 2: Formularz adresu i preferencji porannej dostawy -->
+                <div class="checkout-step-pane" id="cart-step-2">
+                    <div class="checkout-pane-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Gdzie mamy dostarczyć catering?
+                    </div>
+                    <p class="checkout-pane-subtitle">Dostarczamy codziennie w bezszelestnych torbach termicznych prosto pod Twoje drzwi.</p>
+
+                    <form id="checkout-delivery-form">
+                        <div class="checkout-form-grid">
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-name">Imię i Nazwisko *</label>
+                                <input type="text" id="deliv-name" placeholder="np. Jan Kowalski" required>
+                            </div>
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-phone">Numer telefonu do kuriera *</label>
+                                <input type="tel" id="deliv-phone" placeholder="np. 500 123 456" required>
+                            </div>
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-address">Ulica i numer domu / lokalu *</label>
+                                <input type="text" id="deliv-address" placeholder="np. ul. Marszałkowska 10 m. 4" required>
+                            </div>
+                            <div class="checkout-field-group">
+                                <label for="deliv-city">Miejscowość i kod pocztowy *</label>
+                                <input type="text" id="deliv-city" placeholder="np. 00-001 Warszawa" required>
+                            </div>
+                            <div class="checkout-field-group">
+                                <label for="deliv-intercom">Kod domofonu / piętro</label>
+                                <input type="text" id="deliv-intercom" placeholder="np. klatka 2, kod 1234">
+                            </div>
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-hours">Preferowana godzina porannej dostawy</label>
+                                <select id="deliv-hours">
+                                    <option value="4:00 - 6:30">Poranek 4:00 - 6:30 (Rekomendowane)</option>
+                                    <option value="6:30 - 8:00">Poranek 6:30 - 8:00 (Standard)</option>
+                                    <option value="3:00 - 5:00">Wczesny poranek 3:00 - 5:00</option>
+                                </select>
+                            </div>
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-notes">Wskazówki dla kuriera nocnego</label>
+                                <textarea id="deliv-notes" placeholder="np. prosimy zostawić paczkę na wycieraczce pod drzwiami..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="checkout-actions-row">
+                            <button type="button" class="btn btn-outline btn-sm" id="btn-back-to-step-1">← Koszyk</button>
+                            <button type="submit" class="btn btn-primary btn-sm" id="btn-to-step-3">Dalej: Płatność →</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- KROK 3: Wybór metody płatności i autoryzacja -->
+                <div class="checkout-step-pane" id="cart-step-3">
+                    <div class="checkout-pane-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                        Podsumowanie i Płatność
+                    </div>
+
+                    <!-- Podgląd danych dostawy -->
+                    <div class="checkout-delivery-recap" id="checkout-recap-box">
+                        <div class="recap-row"><span>Odbiorca:</span><strong id="recap-name">-</strong></div>
+                        <div class="recap-row"><span>Adres dostawy:</span><strong id="recap-address">-</strong></div>
+                        <div class="recap-row"><span>Godzina:</span><strong id="recap-hours">-</strong></div>
+                        <div class="recap-row" style="margin-top:0.4rem; padding-top:0.4rem; border-top:1px dashed var(--border-color);">
+                            <span>Kwota do zapłaty:</span><strong style="color:var(--primary); font-size:1.05rem;" id="recap-total">0 zł</strong>
+                        </div>
+                    </div>
+
+                    <div class="payment-selector-tabs">
+                        <!-- BLIK -->
+                        <div class="pay-card-choice active" data-pay="BLIK">
+                            <div class="pay-card-choice-head">
+                                <span>📱 Płatność BLIK</span>
+                                <input type="radio" name="checkout_pay" value="BLIK" checked>
+                            </div>
+                            <div class="pay-card-choice-body">
+                                <label style="font-size:0.8rem; font-weight:700; display:block; margin-bottom:0.4rem;">Wpisz 6-cyfrowy kod z aplikacji bankowej:</label>
+                                <div class="blik-input-wrap">
+                                    <input type="text" maxlength="7" class="blik-code-input" id="blik-code-input" placeholder="000 000" value="738 291">
+                                    <small style="color:var(--text-muted); font-size:0.75rem;">(Wygenerowano kod testowy)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Karta -->
+                        <div class="pay-card-choice" data-pay="Karta">
+                            <div class="pay-card-choice-head">
+                                <span>💳 Karta płatnicza (Visa / Mastercard)</span>
+                                <input type="radio" name="checkout_pay" value="Karta">
+                            </div>
+                            <div class="pay-card-choice-body">
+                                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                                    <input type="text" class="form-input" style="font-size:0.85rem;" placeholder="Numer karty: 4532 •••• •••• 8821">
+                                    <div style="display:flex; gap:0.5rem;">
+                                        <input type="text" class="form-input" style="font-size:0.85rem;" placeholder="MM/RR (np. 08/28)">
+                                        <input type="text" maxlength="3" class="form-input" style="font-size:0.85rem;" placeholder="CVV: 123">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Szybki przelew -->
+                        <div class="pay-card-choice" data-pay="Przelew">
+                            <div class="pay-card-choice-head">
+                                <span>🏦 Szybki przelew online</span>
+                                <input type="radio" name="checkout_pay" value="Przelew">
+                            </div>
+                            <div class="pay-card-choice-body">
+                                <div class="banks-grid">
+                                    <div class="bank-pill active">mBank</div>
+                                    <div class="bank-pill">PKO BP</div>
+                                    <div class="bank-pill">Santander</div>
+                                    <div class="bank-pill">ING Bank</div>
+                                    <div class="bank-pill">Alior</div>
+                                    <div class="bank-pill">Millennium</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Apple / Google Pay -->
+                        <div class="pay-card-choice" data-pay="Apple/G Pay">
+                            <div class="pay-card-choice-head">
+                                <span>🍏 Apple Pay / Google Pay</span>
+                                <input type="radio" name="checkout_pay" value="Apple/G Pay">
+                            </div>
+                            <div class="pay-card-choice-body">
+                                <p style="font-size:0.82rem; color:var(--text-muted); margin:0;">Zostaniesz przekierowany do biometrycznej autoryzacji w telefonie.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-actions-row">
+                        <button type="button" class="btn btn-outline btn-sm" id="btn-back-to-step-2">← Wróć</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="btn-finalize-order">Opłać i zamów (<span id="btn-pay-amount">0 zł</span>)</button>
+                    </div>
+                </div>
+
+                <!-- KROK 4: Sukces zamówienia -->
+                <div class="order-success-pane" id="cart-step-success">
+                    <div class="order-success-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h3 style="font-size:1.35rem; font-weight:800; color:var(--dark); margin-bottom:0.25rem;">Zamówienie przyjęte do realizacji!</h3>
+                    <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:0.5rem;">Płatność została pomyślnie przetworzona.</p>
+                    <div class="order-number-pill" id="success-order-num">#FP-83921</div>
+                    <div class="order-details-card" id="success-order-card">
+                        <div>📅 <strong>Pierwsza dostawa:</strong> Jutro rano (4:00 - 6:30)</div>
+                        <div>📍 <strong>Adres dostawy:</strong> <span id="success-order-address">-</span></div>
+                        <div>👤 <strong>Odbiorca:</strong> <span id="success-order-client">-</span></div>
+                        <div>🥗 <strong>Status kuchni:</strong> Przekazano do szefa kuchni</div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn-close-success" style="width:100%;">Wróć do strony głównej</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 5. MODAL USTAWIEŃ I MOTYWU (Zębatka) -->
+    <div class="settings-modal-overlay" id="settings-modal-overlay">
+        <div class="settings-card">
+            <div class="settings-header">
+                <h3>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    Ustawienia i Konto
+                </h3>
+                <button class="drawer-close-btn" id="settings-close-btn">&times;</button>
+            </div>
+
+            <div class="settings-body">
+                <!-- Profil użytkownika -->
+                <div class="settings-user-box">
+                    <div class="user-avatar-circle" id="settings-user-initial">U</div>
+                    <div class="user-info-text">
+                        <strong id="settings-user-email">uzytkownik@foodpack.pl</strong>
+                        <span>Aktywny klient Foodpack • Status VIP</span>
+                    </div>
+                </div>
+
+                <!-- Przełącznik motywu ciemnego / jasnego -->
+                <div class="settings-row">
+                    <div class="settings-row-text">
+                        <h4>Tryb Ciemny (Dark Mode)</h4>
+                        <p>Zmień wygląd interfejsu na wygodny dla oczu w nocy</p>
+                    </div>
+                    <label class="theme-switch" aria-label="Przełącznik motywu">
+                        <input type="checkbox" id="theme-switch-checkbox">
+                        <span class="theme-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Regulamin serwisu -->
+                <div class="terms-accordion" id="settings-terms-accordion">
+                    <button class="terms-header-btn" id="settings-terms-header">
+                        <span>📜 Regulamin serwisu i dostaw</span>
+                        <span>▼</span>
+                    </button>
+                    <div class="terms-content">
+                        <p><strong>1. Postanowienia ogólne:</strong> Serwis cateringowy Foodpack świadczy usługi przygotowania oraz nocnych dostaw posiłków dietetycznych pod wskazany adres.</p>
+                        <p style="margin-top:0.5rem;"><strong>2. Godziny dostaw:</strong> Dostawy realizowane są w godzinach 02:00 – 06:30 w specjalistycznych torbach termicznych chroniących świeżość dań.</p>
+                        <p style="margin-top:0.5rem;"><strong>3. Zmiana terminu i anulowanie:</strong> Klient może bezpłatnie przesunąć dzień dostawy lub zawiesić catering do godziny 12:00 w dniu roboczym poprzedzającym dostawę.</p>
+                        <p style="margin-top:0.5rem;"><strong>4. Opakowania:</strong> Tacki wykonane są z biodegradowalnej pulpy kukurydzianej i nadają się do podgrzewania w mikrofali.</p>
+                    </div>
+                </div>
+
+                <!-- Przycisk wylogowania -->
+                <button class="settings-logout-btn" id="settings-logout-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    Wyloguj się (resetuje koszyk)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. NOWOCZESNY PANEL LOGOWANIA (Gating / Auth Modal) -->
+    <div class="auth-modal-overlay" id="auth-modal-overlay">
+        <div class="auth-card">
+            <div class="auth-card-header">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                </div>
+                <h3>Witaj w Foodpack</h3>
+                <p>Zaloguj się na swój adres e-mail, aby zarządzać dietami i koszykiem</p>
+            </div>
+
+            <div class="auth-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab-btn active" id="auth-tab-login">Logowanie</button>
+                    <button class="auth-tab-btn" id="auth-tab-register">Rejestracja</button>
+                </div>
+
+                <!-- Komunikat o błędzie hasła / rejestracji -->
+                <div class="auth-error-alert" id="auth-error-alert"></div>
+
+                <form id="auth-main-form">
+                    <div class="auth-form-group">
+                        <label for="auth-email">Twój adres e-mail:</label>
+                        <input type="email" id="auth-email" class="form-input" placeholder="np. jan.kowalski@gmail.com" required>
+                    </div>
+                    
+                    <div class="auth-form-group">
+                        <label for="auth-password">Hasło dostępu:</label>
+                        <div class="password-input-wrap">
+                            <input type="password" id="auth-password" class="form-input" placeholder="Wprowadź hasło..." required>
+                            <span class="password-toggle-btn" id="auth-pass-toggle" title="Pokaż/ukryj hasło">👁️</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="auth-submit-btn" style="width:100%; margin-top:0.5rem;">
+                        Zaloguj się do Foodpack
+                    </button>
+                </form>
+
+                <div class="auth-hint-box">
+                    🔑 <strong>Konto testowe:</strong> klient.demo@foodpack.pl / hasło: <strong>demo</strong>
+                </div>
+
+                <button class="auth-demo-btn" id="auth-demo-btn">
+                    ⚡ Zaloguj kontem testowym (1-klik)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- 7. Czysta Strona Główna -->
+        <section class="home-hero-clean">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="section-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        🔥 Tydzień Promocji: Diety do -15% & Zamów na 7 dni ze zniżką -10%!
+                    </div>
+                    <h1>Zdrowe i świeże posiłki prosto pod Twoje <span class="highlight">drzwi</span></h1>
+                    <p class="hero-description">
+                        Oszczędzaj czas i ciesz się smakiem wykwintnych dań przygotowanych przez dietetyków klinicznych i szefów kuchni. Wybierz gotowy plan żywieniowy lub wylicz zapotrzebowanie kaloryczne.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="diety.html" class="btn btn-primary btn-lg">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                            Przeglądaj Diety
+                        </a>
+                        <a href="kalkulator.html" class="btn btn-outline btn-lg">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line></svg>
+                            Kalkulator Kalorii
+                        </a>
+                    </div>
+                    
+                    <div class="hero-trust">
+                        <div class="avatar-group">
+                            <div class="avatar-mock" style="background:#2563eb;">AK</div>
+                            <div class="avatar-mock" style="background:#16a34a;">MP</div>
+                            <div class="avatar-mock" style="background:#ea580c;">TN</div>
+                            <div class="avatar-mock" style="background:#8b5cf6;">JS</div>
+                        </div>
+                        <div class="trust-text">
+                            <div class="stars">★★★★★</div>
+                            <p><strong>Ponad 12 500 zadowolonych klientów</strong> Średnia ocen 4.9/5 w Google i Trustpilot</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Karta wizualna w Hero -->
+                <div class="hero-visual">
+                    <div class="hero-card-main">
+                        <div class="hero-image-wrap">
+                            <span class="hero-card-badge">Bestseller: Fit Bowl</span>
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Pieczony łosoś z komosą i awokado" loading="lazy">
+                        </div>
+                        <div class="hero-card-info">
+                            <h4>Pieczony łosoś z komosą i awokado</h4>
+                            <p>Zbilansowany obiad z serii Slim & Fit ze świeżymi ziołami</p>
+                            <div class="hero-macros">
+                                <div class="macro-box">
+                                    <span>Kalorie</span>
+                                    <strong>520 kcal</strong>
+                                </div>
+                                <div class="macro-box">
+                                    <span>Białko</span>
+                                    <strong>38 g</strong>
+                                </div>
+                                <div class="macro-box">
+                                    <span>Węgle</span>
+                                    <strong>46 g</strong>
+                                </div>
+                                <div class="macro-box">
+                                    <span>Tłuszcze</span>
+                                    <strong>18 g</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-badge badge-top-right">
+                        <div class="badge-icon icon-delivery">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                        </div>
+                        <div>
+                            <strong style="font-size:0.85rem; display:block;">Darmowa dostawa</strong>
+                            <small style="color:var(--text-muted); font-size:0.75rem;">Codziennie do 6:30 rano</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-badge badge-bottom-left">
+                        <div class="badge-icon icon-chef">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path><line x1="6" y1="17" x2="18" y2="17"></line></svg>
+                        </div>
+                        <div>
+                            <strong style="font-size:0.85rem; display:block;">100% Świeżości</strong>
+                            <small style="color:var(--text-muted); font-size:0.75rem;">Naturalne składniki</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Stopka -->
+    <footer class="footer">
+        <div class="container footer-bottom" style="border:none; padding:1.25rem 0;">
+            <p>&copy; 2026 Foodpack Catering Dietetyczny. Wszelkie prawa zastrzeżone. Projekt na informatykę.</p>
+            <div style="display:flex; gap:1.5rem; font-size:0.85rem;">
+                <a href="diety.html" style="color:var(--text-muted);">Diety</a>
+                <a href="kalkulator.html" style="color:var(--text-muted);">Kalkulator</a>
+                <a href="o-nas.html" style="color:var(--text-muted);">O nas</a>
+                <a href="faq.html" style="color:var(--text-muted);">FAQ & Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

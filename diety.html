@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Poznaj wszystkie diety i pakiety Foodpack. Sprawdź bilans makroskładników, ceny oraz przykładowe menu każdego dnia.">
+    <title>Nasze Diety i Pakiety | Foodpack Catering</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 1. Pasek informacyjny górny -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">
+                <div class="top-bar-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Dostawa codziennie rano: 02:00 – 06:30</span>
+                </div>
+                <div class="top-bar-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>Infolinia: +48 790 000 123</span>
+                </div>
+            </div>
+            <div class="top-bar-promo">
+                Kod rabatowy: <strong>START15</strong> (-15% na zamówienie)
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Header z MENU, ZĘBATKĄ i KOSZYKIEM -->
+    <header class="header">
+        <div class="container header-container">
+            <button class="menu-trigger-btn" id="drawer-toggle-btn" aria-label="Otwórz menu nawigacji">
+                <div class="menu-trigger-icon"><span></span><span></span><span></span></div>
+                <span>MENU</span>
+            </button>
+
+            <a href="index.html" class="logo" aria-label="Strona główna Foodpack">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                </div>
+                <span>Food</span>pack
+            </a>
+
+            <!-- PRAWY RÓG: Status Zalogowano + Zębatka Ustawień + Koszyk -->
+            <div class="header-actions">
+                <!-- Wskaźnik statusu logowania -->
+                <div class="auth-status-pill logged-in" id="auth-status-pill" title="Status konta">
+                    <span class="auth-status-dot"></span>
+                    <span class="auth-status-label" id="auth-status-label">Zalogowano</span>
+                </div>
+
+                <button class="settings-trigger-btn" aria-label="Otwórz ustawienia i profil" title="Ustawienia serwisu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                </button>
+                <button class="cart-trigger-btn" aria-label="Otwórz koszyk zakupowy">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span>Koszyk:</span>
+                    <span class="cart-badge" id="header-cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Drawer Menu -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <aside class="side-drawer" id="side-drawer" aria-label="Główne Menu">
+        <div class="drawer-header">
+            <a href="index.html" class="logo" style="font-size:1.35rem;">
+                <div class="logo-icon" style="width:34px; height:34px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                </div>
+                <span>Food</span>pack
+            </a>
+            <button class="drawer-close-btn" id="drawer-close-btn">&times;</button>
+        </div>
+
+        <nav class="drawer-nav">
+            <span class="drawer-section-label">Podstrony</span>
+            <a href="index.html" class="drawer-link">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></div>
+                <span>Strona Główna</span>
+            </a>
+            <a href="diety.html" class="drawer-link active">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg></div>
+                <span>Diety i Pakiety</span>
+            </a>
+            <a href="kalkulator.html" class="drawer-link">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line></svg></div>
+                <span>Kalkulator Kalorii & BMI</span>
+            </a>
+            <span class="drawer-section-label">O Firmie i Pomoc</span>
+            <a href="o-nas.html" class="drawer-link">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path></svg></div>
+                <span>O nas, Atuty & Opinie</span>
+            </a>
+            <a href="faq.html" class="drawer-link">
+                <div class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+                <span>Częste Pytania (FAQ) & Kontakt</span>
+            </a>
+        </nav>
+        <div class="drawer-footer">
+            <div class="drawer-promo-card">
+                <span>Kupon rabatowy:</span>
+                <strong>START15 (-15%)</strong>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 4. ROZSUWANY KOSZYK (Cart Drawer) -->
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Koszyk zamówienia">
+        <div class="cart-header">
+            <h3>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                Twój Koszyk
+            </h3>
+            <button class="cart-close-btn" id="cart-close-btn">&times;</button>
+        </div>
+        <div class="cart-body">
+            <div class="cart-empty-state" id="cart-empty-view">
+                <div class="cart-empty-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></div>
+                <h4>Twój koszyk jest pusty</h4>
+                <p>Kliknij „Dodaj do koszyka” przy dowolnej diecie z poniższej listy!</p>
+            </div>
+
+            <div id="cart-filled-view" style="display:none; flex-direction:column; gap:1.15rem;">
+                <!-- Stepper postępu -->
+                <div class="checkout-stepper">
+                    <div class="checkout-step active" id="step-tab-1"><span class="checkout-step-num">1</span> Koszyk</div>
+                    <span class="checkout-stepper-sep">→</span>
+                    <div class="checkout-step" id="step-tab-2"><span class="checkout-step-num">2</span> Dostawa</div>
+                    <span class="checkout-stepper-sep">→</span>
+                    <div class="checkout-step" id="step-tab-3"><span class="checkout-step-num">3</span> Płatność</div>
+                </div>
+
+                <!-- KROK 1: Wybrane pakiety i kody rabatowe -->
+                <div class="checkout-step-pane active" id="cart-step-1">
+                    <div class="diet-bundle-banner">
+                        <span class="diet-bundle-icon">⚡</span>
+                        <div><strong>Promocja Tygodnia:</strong> Zamów na 7 dni (cały tydzień) i płać <strong>10% taniej</strong> za każdy dzień!</div>
+                    </div>
+
+                    <div class="cart-items-list" id="cart-items-container"></div>
+
+                    <div class="cart-promo-section">
+                        <span class="cart-promo-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            </svg>
+                            Kupon rabatowy:
+                        </span>
+                        <form class="cart-promo-form" id="cart-promo-form">
+                            <input type="text" class="cart-promo-input" id="cart-promo-input" placeholder="Wpisz START15 lub TYDZIEN10">
+                            <button type="submit" class="btn btn-outline btn-sm">Dodaj</button>
+                        </form>
+                        <div id="cart-promo-status" class="cart-promo-status"></div>
+                    </div>
+
+                    <div class="cart-footer" style="padding:1rem 0 0; background:transparent; border-top:1px solid var(--border-color);">
+                        <div class="cart-summary-row"><span>Wartość posiłków:</span><strong id="cart-subtotal">0 zł</strong></div>
+                        <div class="cart-summary-row discount-row" id="cart-discount-row" style="display:none;"><span>Rabat aktywny:</span><strong id="cart-discount-val">-0 zł</strong></div>
+                        <div class="cart-summary-row"><span>Dostawa chłodnicza:</span><strong style="color:var(--primary);">Gratis (0 zł)</strong></div>
+                        <div class="cart-summary-total"><span>Razem do zapłaty:</span><span id="cart-total">0 zł</span></div>
+                        <button class="btn btn-primary cart-checkout-btn" id="btn-to-step-2">Dalej: Dane dostawy & Adres →</button>
+                    </div>
+                </div>
+
+                <!-- KROK 2: Formularz adresu i preferencji porannej dostawy -->
+                <div class="checkout-step-pane" id="cart-step-2">
+                    <div class="checkout-pane-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Gdzie mamy dostarczyć catering?
+                    </div>
+                    <p class="checkout-pane-subtitle">Dostarczamy codziennie w bezszelestnych torbach termicznych prosto pod Twoje drzwi.</p>
+
+                    <form id="checkout-delivery-form">
+                        <div class="checkout-form-grid">
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-name">Imię i Nazwisko *</label>
+                                <input type="text" id="deliv-name" placeholder="np. Jan Kowalski" required>
+                            </div>
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-phone">Numer telefonu do kuriera *</label>
+                                <input type="tel" id="deliv-phone" placeholder="np. 500 123 456" required>
+                            </div>
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-address">Ulica i numer domu / lokalu *</label>
+                                <input type="text" id="deliv-address" placeholder="np. ul. Marszałkowska 10 m. 4" required>
+                            </div>
+                            <div class="checkout-field-group">
+                                <label for="deliv-city">Miejscowość i kod pocztowy *</label>
+                                <input type="text" id="deliv-city" placeholder="np. 00-001 Warszawa" required>
+                            </div>
+                            <div class="checkout-field-group">
+                                <label for="deliv-intercom">Kod domofonu / piętro</label>
+                                <input type="text" id="deliv-intercom" placeholder="np. klatka 2, kod 1234">
+                            </div>
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-hours">Preferowana godzina porannej dostawy</label>
+                                <select id="deliv-hours">
+                                    <option value="4:00 - 6:30">Poranek 4:00 - 6:30 (Rekomendowane)</option>
+                                    <option value="6:30 - 8:00">Poranek 6:30 - 8:00 (Standard)</option>
+                                    <option value="3:00 - 5:00">Wczesny poranek 3:00 - 5:00</option>
+                                </select>
+                            </div>
+                            <div class="checkout-field-group full-width">
+                                <label for="deliv-notes">Wskazówki dla kuriera nocnego</label>
+                                <textarea id="deliv-notes" placeholder="np. prosimy zostawić paczkę na wycieraczce pod drzwiami..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="checkout-actions-row">
+                            <button type="button" class="btn btn-outline btn-sm" id="btn-back-to-step-1">← Koszyk</button>
+                            <button type="submit" class="btn btn-primary btn-sm" id="btn-to-step-3">Dalej: Płatność →</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- KROK 3: Wybór metody płatności i autoryzacja -->
+                <div class="checkout-step-pane" id="cart-step-3">
+                    <div class="checkout-pane-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                        Podsumowanie i Płatność
+                    </div>
+
+                    <!-- Podgląd danych dostawy -->
+                    <div class="checkout-delivery-recap" id="checkout-recap-box">
+                        <div class="recap-row"><span>Odbiorca:</span><strong id="recap-name">-</strong></div>
+                        <div class="recap-row"><span>Adres dostawy:</span><strong id="recap-address">-</strong></div>
+                        <div class="recap-row"><span>Godzina:</span><strong id="recap-hours">-</strong></div>
+                        <div class="recap-row" style="margin-top:0.4rem; padding-top:0.4rem; border-top:1px dashed var(--border-color);">
+                            <span>Kwota do zapłaty:</span><strong style="color:var(--primary); font-size:1.05rem;" id="recap-total">0 zł</strong>
+                        </div>
+                    </div>
+
+                    <div class="payment-selector-tabs">
+                        <!-- BLIK -->
+                        <div class="pay-card-choice active" data-pay="BLIK">
+                            <div class="pay-card-choice-head">
+                                <span>📱 Płatność BLIK</span>
+                                <input type="radio" name="checkout_pay" value="BLIK" checked>
+                            </div>
+                            <div class="pay-card-choice-body">
+                                <label style="font-size:0.8rem; font-weight:700; display:block; margin-bottom:0.4rem;">Wpisz 6-cyfrowy kod z aplikacji bankowej:</label>
+                                <div class="blik-input-wrap">
+                                    <input type="text" maxlength="7" class="blik-code-input" id="blik-code-input" placeholder="000 000" value="738 291">
+                                    <small style="color:var(--text-muted); font-size:0.75rem;">(Wygenerowano kod testowy)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Karta -->
+                        <div class="pay-card-choice" data-pay="Karta">
+                            <div class="pay-card-choice-head">
+                                <span>💳 Karta płatnicza (Visa / Mastercard)</span>
+                                <input type="radio" name="checkout_pay" value="Karta">
+                            </div>
+                            <div class="pay-card-choice-body">
+                                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                                    <input type="text" class="form-input" style="font-size:0.85rem;" placeholder="Numer karty: 4532 •••• •••• 8821">
+                                    <div style="display:flex; gap:0.5rem;">
+                                        <input type="text" class="form-input" style="font-size:0.85rem;" placeholder="MM/RR (np. 08/28)">
+                                        <input type="text" maxlength="3" class="form-input" style="font-size:0.85rem;" placeholder="CVV: 123">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Szybki przelew -->
+                        <div class="pay-card-choice" data-pay="Przelew">
+                            <div class="pay-card-choice-head">
+                                <span>🏦 Szybki przelew online</span>
+                                <input type="radio" name="checkout_pay" value="Przelew">
+                            </div>
+                            <div class="pay-card-choice-body">
+                                <div class="banks-grid">
+                                    <div class="bank-pill active">mBank</div>
+                                    <div class="bank-pill">PKO BP</div>
+                                    <div class="bank-pill">Santander</div>
+                                    <div class="bank-pill">ING Bank</div>
+                                    <div class="bank-pill">Alior</div>
+                                    <div class="bank-pill">Millennium</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Apple / Google Pay -->
+                        <div class="pay-card-choice" data-pay="Apple/G Pay">
+                            <div class="pay-card-choice-head">
+                                <span>🍏 Apple Pay / Google Pay</span>
+                                <input type="radio" name="checkout_pay" value="Apple/G Pay">
+                            </div>
+                            <div class="pay-card-choice-body">
+                                <p style="font-size:0.82rem; color:var(--text-muted); margin:0;">Zostaniesz przekierowany do biometrycznej autoryzacji w telefonie.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-actions-row">
+                        <button type="button" class="btn btn-outline btn-sm" id="btn-back-to-step-2">← Wróć</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="btn-finalize-order">Opłać i zamów (<span id="btn-pay-amount">0 zł</span>)</button>
+                    </div>
+                </div>
+
+                <!-- KROK 4: Sukces zamówienia -->
+                <div class="order-success-pane" id="cart-step-success">
+                    <div class="order-success-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h3 style="font-size:1.35rem; font-weight:800; color:var(--dark); margin-bottom:0.25rem;">Zamówienie przyjęte do realizacji!</h3>
+                    <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:0.5rem;">Płatność została pomyślnie przetworzona.</p>
+                    <div class="order-number-pill" id="success-order-num">#FP-83921</div>
+                    <div class="order-details-card" id="success-order-card">
+                        <div>📅 <strong>Pierwsza dostawa:</strong> Jutro rano (4:00 - 6:30)</div>
+                        <div>📍 <strong>Adres dostawy:</strong> <span id="success-order-address">-</span></div>
+                        <div>👤 <strong>Odbiorca:</strong> <span id="success-order-client">-</span></div>
+                        <div>🥗 <strong>Status kuchni:</strong> Przekazano do szefa kuchni</div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn-close-success" style="width:100%;">Wróć do oferty diet</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 5. MODAL USTAWIEŃ (Zębatka) -->
+    <div class="settings-modal-overlay" id="settings-modal-overlay">
+        <div class="settings-card">
+            <div class="settings-header">
+                <h3>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    Ustawienia i Konto
+                </h3>
+                <button class="drawer-close-btn" id="settings-close-btn">&times;</button>
+            </div>
+            <div class="settings-body">
+                <div class="settings-user-box">
+                    <div class="user-avatar-circle" id="settings-user-initial">U</div>
+                    <div class="user-info-text">
+                        <strong id="settings-user-email">uzytkownik@foodpack.pl</strong>
+                        <span>Aktywny klient Foodpack • Status VIP</span>
+                    </div>
+                </div>
+
+                <div class="settings-row">
+                    <div class="settings-row-text">
+                        <h4>Tryb Ciemny (Dark Mode)</h4>
+                        <p>Zmień wygląd interfejsu na wygodny dla oczu w nocy</p>
+                    </div>
+                    <label class="theme-switch" aria-label="Przełącznik motywu">
+                        <input type="checkbox" id="theme-switch-checkbox">
+                        <span class="theme-slider"></span>
+                    </label>
+                </div>
+
+                <div class="terms-accordion" id="settings-terms-accordion">
+                    <button class="terms-header-btn" id="settings-terms-header">
+                        <span>📜 Regulamin serwisu i dostaw</span>
+                        <span>▼</span>
+                    </button>
+                    <div class="terms-content">
+                        <p><strong>1. Postanowienia ogólne:</strong> Serwis cateringowy Foodpack świadczy usługi przygotowania oraz nocnych dostaw posiłków dietetycznych pod wskazany adres.</p>
+                        <p style="margin-top:0.5rem;"><strong>2. Godziny dostaw:</strong> Dostawy realizowane są w godzinach 02:00 – 06:30 w specjalistycznych torbach termicznych chroniących świeżość dań.</p>
+                        <p style="margin-top:0.5rem;"><strong>3. Zmiana terminu i anulowanie:</strong> Klient może bezpłatnie przesunąć dzień dostawy lub zawiesić catering do godziny 12:00 w dniu roboczym poprzedzającym dostawę.</p>
+                        <p style="margin-top:0.5rem;"><strong>4. Opakowania:</strong> Tacki wykonane są z biodegradowalnej pulpy kukurydzianej i nadają się do podgrzewania w mikrofali.</p>
+                    </div>
+                </div>
+
+                <button class="settings-logout-btn" id="settings-logout-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    Wyloguj się (resetuje koszyk)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. MODAL LOGOWANIA (Auth Modal) -->
+    <div class="auth-modal-overlay" id="auth-modal-overlay">
+        <div class="auth-card">
+            <div class="auth-card-header">
+                <div class="logo-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg></div>
+                <h3>Witaj w Foodpack</h3>
+                <p>Zaloguj się na swój adres e-mail, aby zarządzać dietami i koszykiem</p>
+            </div>
+            <div class="auth-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab-btn active" id="auth-tab-login">Logowanie</button>
+                    <button class="auth-tab-btn" id="auth-tab-register">Rejestracja</button>
+                </div>
+                <!-- Błąd autoryzacji -->
+                <div class="auth-error-alert" id="auth-error-alert"></div>
+
+                <form id="auth-main-form">
+                    <div class="auth-form-group">
+                        <label for="auth-email">Twój adres e-mail:</label>
+                        <input type="email" id="auth-email" class="form-input" placeholder="np. jan.kowalski@gmail.com" required>
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="auth-password">Hasło dostępu:</label>
+                        <div class="password-input-wrap">
+                            <input type="password" id="auth-password" class="form-input" placeholder="Wprowadź hasło..." required>
+                            <span class="password-toggle-btn" id="auth-pass-toggle" title="Pokaż/ukryj hasło">👁️</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="auth-submit-btn" style="width:100%; margin-top:0.5rem;">
+                        Zaloguj się do Foodpack
+                    </button>
+                </form>
+
+                <div class="auth-hint-box">
+                    🔑 <strong>Konto testowe:</strong> klient.demo@foodpack.pl / hasło: <strong>demo</strong>
+                </div>
+
+                <button class="auth-demo-btn" id="auth-demo-btn">⚡ Zaloguj kontem testowym (1-klik)</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Nagłówek podstrony -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="section-badge">Oferta Pudełkowa</span>
+                <h1>Wybierz Dietę Dopasowaną Do Ciebie</h1>
+                <p>Kliknij w kartę diety, aby otworzyć jej pełny opis, bilans makroskładników oraz jadłospis dnia.</p>
+            </div>
+        </section>
+
+        <!-- Sekcja z filtrami i kartami diet -->
+        <section class="section">
+            <div class="container">
+                <!-- Baner Promocji Tygodnia -->
+                <div class="diet-bundle-banner" style="margin-bottom: 2rem;">
+                    <span class="diet-bundle-icon">🔥</span>
+                    <div>
+                        <strong>Oferta Specjalna:</strong> Wybrane diety w promocji do <strong>-15%</strong>! Ponadto wybierając pakiet na <strong>7 dni (cały tydzień)</strong> automatycznie naliczamy <strong>dodatkowy rabat -10%</strong> na każdy dzień diety.
+                    </div>
+                </div>
+
+                <div class="diet-filter">
+                    <button class="filter-btn active" data-filter="all">Wszystkie diety</button>
+                    <button class="filter-btn" data-filter="redukcja">Redukcja wagi</button>
+                    <button class="filter-btn" data-filter="sport">Sport & Forma</button>
+                    <button class="filter-btn" data-filter="vege">Wegetariańskie</button>
+                    <button class="filter-btn" data-filter="zdrowie">Zdrowie & Balans</button>
+                </div>
+
+                <div class="diets-grid">
+                    <!-- Dieta 1: Slim & Fit -->
+                    <div class="diet-card popular" data-category="redukcja" data-diet-id="slim-fit">
+                        <span class="diet-promo-badge">🔥 HIT TYGODNIA -15%</span>
+                        <div class="diet-image-wrap">
+                            <span class="diet-tag">Redukcja</span>
+                            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="Dieta Slim & Fit" loading="lazy">
+                        </div>
+                        <div class="diet-body">
+                            <div class="diet-header">
+                                <h3 class="diet-title">Slim & Fit</h3>
+                                <div class="diet-price"><span class="diet-old-price">69 zł</span>59 zł <small>/ dzień</small></div>
+                            </div>
+                            <p class="diet-description">Stworzona dla osób chcących zrzucić wagę bez głodówek. Niska gęstość kaloryczna, wysoki indeks sytości.</p>
+                            <div class="diet-specs">
+                                <div class="spec-item"><span>Kaloryczność</span><strong>1200 - 2200 kcal</strong></div>
+                                <div class="spec-item"><span>Posiłki</span><strong>5 dań</strong></div>
+                                <div class="spec-item"><span>Białko</span><strong>25%</strong></div>
+                            </div>
+                            <div class="diet-footer-action">
+                                <span class="diet-click-hint">Szczegóły & bilans →</span>
+                                <button class="btn btn-primary btn-sm add-cart-direct" onclick="event.stopPropagation(); addToCart('slim-fit', 5);">Dodaj do koszyka</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dieta 2: Sport & Pro -->
+                    <div class="diet-card" data-category="sport" data-diet-id="sport-pro">
+                        <span class="diet-promo-badge">⚡ PROMOCJA -10%</span>
+                        <div class="diet-image-wrap">
+                            <span class="diet-tag">Masa i Siła</span>
+                            <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=600&q=80" alt="Dieta Sport & Pro" loading="lazy">
+                        </div>
+                        <div class="diet-body">
+                            <div class="diet-header">
+                                <h3 class="diet-title">Sport & Pro</h3>
+                                <div class="diet-price"><span class="diet-old-price">82 zł</span>74 zł <small>/ dzień</small></div>
+                            </div>
+                            <p class="diet-description">Maksymalna regeneracja i wsparcie budowy masy mięśniowej. Duża dawka pełnowartościowego białka.</p>
+                            <div class="diet-specs">
+                                <div class="spec-item"><span>Kaloryczność</span><strong>2500 - 3800 kcal</strong></div>
+                                <div class="spec-item"><span>Posiłki</span><strong>5 dań</strong></div>
+                                <div class="spec-item"><span>Białko</span><strong>35%</strong></div>
+                            </div>
+                            <div class="diet-footer-action">
+                                <span class="diet-click-hint">Szczegóły & bilans →</span>
+                                <button class="btn btn-primary btn-sm add-cart-direct" onclick="event.stopPropagation(); addToCart('sport-pro', 5);">Dodaj do koszyka</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dieta 3: Vege Harmony -->
+                    <div class="diet-card" data-category="vege" data-diet-id="vege-harmony">
+                        <span class="diet-promo-badge" style="background:linear-gradient(135deg, #16a34a, #10b981);">🌿 EKO WEGE</span>
+                        <div class="diet-image-wrap">
+                            <span class="diet-tag">Roślinna</span>
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Dieta Vege Harmony" loading="lazy">
+                        </div>
+                        <div class="diet-body">
+                            <div class="diet-header">
+                                <h3 class="diet-title">Vege Harmony</h3>
+                                <div class="diet-price">64 zł <small>/ dzień</small></div>
+                            </div>
+                            <p class="diet-description">Zbilansowana dieta bezmięsna z nabiałem, jajkami i roślinami strączkowymi. Pełen zestaw aminokwasów.</p>
+                            <div class="diet-specs">
+                                <div class="spec-item"><span>Kaloryczność</span><strong>1500 - 2500 kcal</strong></div>
+                                <div class="spec-item"><span>Posiłki</span><strong>5 dań</strong></div>
+                                <div class="spec-item"><span>Białko</span><strong>20%</strong></div>
+                            </div>
+                            <div class="diet-footer-action">
+                                <span class="diet-click-hint">Szczegóły & bilans →</span>
+                                <button class="btn btn-primary btn-sm add-cart-direct" onclick="event.stopPropagation(); addToCart('vege-harmony', 5);">Dodaj do koszyka</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dieta 4: Keto Power -->
+                    <div class="diet-card" data-category="redukcja" data-diet-id="keto-power">
+                        <span class="diet-promo-badge">🥑 KETO HIT -10%</span>
+                        <div class="diet-image-wrap">
+                            <span class="diet-tag">Ketoza</span>
+                            <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=600&q=80" alt="Dieta Keto Power" loading="lazy">
+                        </div>
+                        <div class="diet-body">
+                            <div class="diet-header">
+                                <h3 class="diet-title">Keto Power</h3>
+                                <div class="diet-price"><span class="diet-old-price">80 zł</span>72 zł <small>/ dzień</small></div>
+                            </div>
+                            <p class="diet-description">Niskowęglowodanowa dieta ketogeniczna oparta na zdrowych tłuszczach: oliwie, awokado, orzechach i rybach.</p>
+                            <div class="diet-specs">
+                                <div class="spec-item"><span>Kaloryczność</span><strong>1600 - 2600 kcal</strong></div>
+                                <div class="spec-item"><span>Posiłki</span><strong>4 dania</strong></div>
+                                <div class="spec-item"><span>Tłuszcze</span><strong>75%</strong></div>
+                            </div>
+                            <div class="diet-footer-action">
+                                <span class="diet-click-hint">Szczegóły & bilans →</span>
+                                <button class="btn btn-primary btn-sm add-cart-direct" onclick="event.stopPropagation(); addToCart('keto-power', 5);">Dodaj do koszyka</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dieta 5: Office Box -->
+                    <div class="diet-card" data-category="zdrowie" data-diet-id="office-box">
+                        <span class="diet-promo-badge">💼 PAKIET BIUROWY -12%</span>
+                        <div class="diet-image-wrap">
+                            <span class="diet-tag">Do Biura</span>
+                            <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=600&q=80" alt="Lunchbox biurowy" loading="lazy">
+                        </div>
+                        <div class="diet-body">
+                            <div class="diet-header">
+                                <h3 class="diet-title">Office Box (3 Dania)</h3>
+                                <div class="diet-price"><span class="diet-old-price">55 zł</span>48 zł <small>/ dzień</small></div>
+                            </div>
+                            <p class="diet-description">Drugie śniadanie, sycący obiad oraz lekki podwieczorek, który daje mnóstwo energii podczas pracy biurowej.</p>
+                            <div class="diet-specs">
+                                <div class="spec-item"><span>Kaloryczność</span><strong>1200 - 1600 kcal</strong></div>
+                                <div class="spec-item"><span>Posiłki</span><strong>3 dania</strong></div>
+                                <div class="spec-item"><span>Węgle</span><strong>50%</strong></div>
+                            </div>
+                            <div class="diet-footer-action">
+                                <span class="diet-click-hint">Szczegóły & bilans →</span>
+                                <button class="btn btn-primary btn-sm add-cart-direct" onclick="event.stopPropagation(); addToCart('office-box', 5);">Dodaj do koszyka</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dieta 6: Niski IG / Balance -->
+                    <div class="diet-card" data-category="zdrowie" data-diet-id="low-ig">
+                        <span class="diet-promo-badge" style="background:linear-gradient(135deg, #0284c7, #06b6d4);">🩺 ZDROWIE & BALANCE</span>
+                        <div class="diet-image-wrap">
+                            <span class="diet-tag">Zdrowie</span>
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80" alt="Dieta Niski Indeks Glikemiczny" loading="lazy">
+                        </div>
+                        <div class="diet-body">
+                            <div class="diet-header">
+                                <h3 class="diet-title">Niski IG / Balance</h3>
+                                <div class="diet-price">68 zł <small>/ dzień</small></div>
+                            </div>
+                            <p class="diet-description">Dedykowana osobom z insulinoopornością i cukrzycą. Zapobiega gwałtownym skokom glukozy we krwi.</p>
+                            <div class="diet-specs">
+                                <div class="spec-item"><span>Kaloryczność</span><strong>1500 - 2400 kcal</strong></div>
+                                <div class="spec-item"><span>Posiłki</span><strong>5 dań</strong></div>
+                                <div class="spec-item"><span>Indeks IG</span><strong>&lt; 50</strong></div>
+                            </div>
+                            <div class="diet-footer-action">
+                                <span class="diet-click-hint">Szczegóły & bilans →</span>
+                                <button class="btn btn-primary btn-sm add-cart-direct" onclick="event.stopPropagation(); addToCart('low-ig', 5);">Dodaj do koszyka</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. PEŁNOEKRANOWY MODAL ZE SZCZEGÓŁAMI DIETY -->
+    <div class="modal-overlay" id="diet-modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+            <div class="modal-hero-cover">
+                <img id="modal-diet-image" src="" alt="Zdjęcie wybranej diety Foodpack">
+                <div class="modal-hero-overlay">
+                    <span class="modal-tag" id="modal-diet-tag">Kategoria</span>
+                    <h2 class="modal-title" id="modal-diet-title">Nazwa Diety</h2>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-grid-info">
+                    <div>
+                        <h3 class="modal-desc-heading">O diecie i przeznaczeniu:</h3>
+                        <p class="modal-description" id="modal-diet-description"></p>
+                        <h4 style="font-size:1.05rem; font-weight:700; color:var(--dark); margin-bottom:0.75rem;">Główne korzyści:</h4>
+                        <div class="modal-benefits" id="modal-diet-benefits"></div>
+                    </div>
+
+                    <div>
+                        <div class="modal-macro-card">
+                            <div class="modal-price-box">
+                                <div class="modal-price-val" id="modal-diet-price">59 zł</div>
+                                <div class="modal-price-sub">za pełny dzień z dostawą pod drzwi</div>
+                            </div>
+                            <h4 style="font-size:0.95rem; font-weight:700; color:var(--dark); margin-bottom:1rem;">Rozkład Makroskładników:</h4>
+                            <div class="macro-breakdown-list">
+                                <div class="macro-bar-item"><span>Kaloryczność: <strong id="modal-calories-val">1500 - 2200 kcal</strong></span></div>
+                                <div class="macro-bar-item">
+                                    <span>Białko: <strong id="modal-protein-val">25%</strong></span>
+                                    <div class="macro-progress"><div class="macro-fill fill-protein" id="modal-protein-bar"></div></div>
+                                </div>
+                                <div class="macro-bar-item">
+                                    <span>Węglowodany: <strong id="modal-carbs-val">45%</strong></span>
+                                    <div class="macro-progress"><div class="macro-fill fill-carbs" id="modal-carbs-bar"></div></div>
+                                </div>
+                                <div class="macro-bar-item">
+                                    <span>Tłuszcze: <strong id="modal-fats-val">30%</strong></span>
+                                    <div class="macro-progress"><div class="macro-fill fill-fats" id="modal-fats-bar"></div></div>
+                                </div>
+                            </div>
+                            <div class="modal-duration-wrap" style="margin-bottom:1rem;">
+                                <span style="font-size:0.8rem; font-weight:700; color:var(--dark); display:block; margin-bottom:0.35rem;">Wybierz czas trwania pakietu:</span>
+                                <div class="diet-duration-selector" id="modal-duration-selector">
+                                    <div class="duration-pill-btn active" data-days="5">5 dni (Pn-Pt)</div>
+                                    <div class="duration-pill-btn" data-days="7">7 dni (Cały tydzień) <span class="discount-tag">-10%</span></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" id="modal-add-cart-btn" style="width:100%;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                Dodaj do koszyka
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sample-menu-box">
+                    <h3 class="sample-menu-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                        Przykładowe menu dnia w tym pakiecie:
+                    </h3>
+                    <div class="sample-menu-list" id="modal-diet-meals"></div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn btn-outline btn-sm" onclick="closeDietModal()">Wróć do przeglądania</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stopka -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Foodpack Catering Dietetyczny. Wszelkie prawa zastrzeżone.</p>
+            <div style="display:flex; gap:1.5rem; font-size:0.85rem;">
+                <a href="index.html" style="color:var(--text-muted);">Strona Główna</a>
+                <a href="kalkulator.html" style="color:var(--text-muted);">Kalkulator</a>
+                <a href="o-nas.html" style="color:var(--text-muted);">O nas</a>
+                <a href="faq.html" style="color:var(--text-muted);">FAQ & Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
